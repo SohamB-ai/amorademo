@@ -47,7 +47,7 @@ export const About = () => {
             <img 
               src="/logo.png" 
               alt="Cafe Amora Logo" 
-              className="relative z-10 w-full max-w-[440px] sm:max-w-[480px] md:max-w-[520px] aspect-square rounded-full object-cover shadow-2xl border-4 border-accent transition-transform duration-500 group-hover:scale-[1.02]"
+              className="relative z-10 w-full max-w-[500px] sm:max-w-[600px] md:max-w-[660px] aspect-square rounded-full object-cover shadow-2xl border-4 border-accent transition-transform duration-500 group-hover:scale-[1.02]"
             />
           </div>
         </div>

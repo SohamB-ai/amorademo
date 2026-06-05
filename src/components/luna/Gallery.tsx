@@ -20,7 +20,7 @@ export const Gallery = () => {
             <button
               key={g.src}
               onClick={() => setActive(g.src)}
-              className="group block w-full overflow-hidden rounded-2xl border border-border focus:outline-none focus:ring-2 focus:ring-primary"
+              className="group block w-full overflow-hidden rounded-2xl border border-border focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 hover:shadow-[0_0_25px_rgba(194,154,67,0.35)] hover:border-accent/40"
             >
               <img
                 src={g.src}

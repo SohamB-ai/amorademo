@@ -38,8 +38,8 @@ export const Preloader = () => {
           loading ? "scale-100" : "scale-110"
         )}>
           <img
-            src="/logo.jpeg"
-            alt="El Broasteria"
+            src="/logo.png"
+            alt="Amora Cafe"
             className="h-full w-full object-cover"
           />
         </div>
