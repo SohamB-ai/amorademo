@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Cafe Amora — Luxurious Light Green & Gold Theme */
+    --background: 45 20% 98.5%;      /* Off-white warm ivory */
+    --foreground: 140 30% 9%;        /* Dark Forest Green-Black */
+
+    --card: 0 0% 100%;               /* Pure white card */
+    --card-foreground: 140 30% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 140 30% 9%;
+
+    --primary: 140 37% 17%;          /* Rich Forest Green */
+    --primary-foreground: 45 20% 98%;
+
+    --secondary: 45 20% 94%;         /* Soft warm beige/cream */
+    --secondary-foreground: 140 37% 17%;
+
+    --muted: 45 15% 90%;             /* Muted cream */
+    --muted-foreground: 140 10% 40%; /* Sage green tone */
+
+    --accent: 41 52% 51%;            /* Elegant Premium Gold */
+    --accent-foreground: 0 0% 100%;
+
+    --neon: 41 52% 51%;
+    --neon-foreground: 0 0% 100%;
+
+    --destructive: 0 75% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 45 15% 88%;
+    --input: 45 15% 88%;
+    --ring: 41 52% 51%;
+
+    --radius: 1rem;
+
+    --gradient-hero: linear-gradient(135deg, #fdfcf7 0%, #f6f1e3 50%, #fdfcf7 100%);
+    --gradient-amber: linear-gradient(135deg, hsl(41 52% 51%), hsl(41 65% 58%));
+    --shadow-glow: 0 10px 40px rgba(27, 58, 36, 0.06);
+    --shadow-neon: 0 10px 30px rgba(194, 154, 67, 0.12);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground font-sans antialiased;
+    background: hsl(var(--background));
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Playfair Display", Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .text-glow {
+    color: hsl(var(--primary));
+  }
+
+  .text-neon {
+    color: hsl(var(--accent));
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+
+  .bg-gradient-hero {
+    background-image: var(--gradient-hero);
+  }
+
+  .bg-gradient-amber {
+    background-image: var(--gradient-amber);
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .8s ease, transform .8s ease;
+  }
+
+  .reveal.in-view {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 280;
+    }
+
+    50% {
+      stroke-dashoffset: 75;
+      transform: rotate(135deg);
+    }
+
+    100% {
+      stroke-dashoffset: 280;
+      transform: rotate(450deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 2s linear infinite;
+  }
+
+  .animate-dash {
+    animation: dash 1.5s ease-in-out infinite;
+  }
+
+  @keyframes indeterminate-bar {
+    0% {
+      transform: translateX(-150%);
+    }
+
+    100% {
+      transform: translateX(250%);
+    }
+  }
+
+  .animate-indeterminate-bar {
+    width: 40%;
+    animation: indeterminate-bar 1.5s infinite ease-in-out;
+  }
+}
